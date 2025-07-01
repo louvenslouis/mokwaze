@@ -1,0 +1,97 @@
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #FFF8E1; /* Light cream background */
+  min-height: 100vh;
+}
+
+.category-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FFC107; /* Amber */
+  margin-bottom: 2rem;
+}
+
+.hints-display {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #FF8F00;
+}
+
+.word-search-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 columns for a 10x10 grid */
+  border: 2px solid #FFC107;
+  margin-bottom: 2rem;
+}
+
+.grid-row {
+  display: contents; /* Allows children to be direct grid items */
+}
+
+.grid-cell {
+  width: 40px; /* Adjust cell size as needed */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #FFECB3; /* Lighter amber for cell borders */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+}
+
+.grid-cell.selected {
+  background-color: #FFD54F; /* Highlight selected cells */
+}
+
+.grid-cell.found {
+  background-color: #8BC34A; /* Green for found words */
+  color: white;
+}
+
+.grid-cell.hinted {
+  background-color: #F44336; /* Red for hinted letters */
+  color: white;
+}
+
+.words-to-find {
+  background-color: #FFECB3; /* Lighter amber background */
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.words-to-find h2 {
+  margin-top: 0;
+  color: #FF8F00; /* Darker amber */
+}
+
+.words-to-find ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.words-to-find li {
+  background-color: #FFD54F; /* Even lighter amber */
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  color: #424242;
+}
+
+.words-to-find li.found {
+  text-decoration: line-through;
+  color: #888;
+  background-color: #E0E0E0;
+}

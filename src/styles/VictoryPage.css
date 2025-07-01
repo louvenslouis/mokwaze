@@ -1,0 +1,36 @@
+
+.victory-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #FFF8E1; /* Light cream background */
+}
+
+.victory-title {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #FFC107; /* Amber */
+}
+
+.victory-subtitle {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  background-color: #FFC107; /* Amber */
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-align: center;
+}

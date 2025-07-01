@@ -1,0 +1,240 @@
+{
+  "categories": [
+    {
+      "name": "Nati",
+      "words": [
+        { "id": 1, "word": "solèy", "level": 1, "length": 5, "hint": "Li klere syèl la lajounen." },
+        { "id": 2, "word": "lanmè", "level": 1, "length": 5, "hint": "Gwo dlo sale." },
+        { "id": 3, "word": "pikan", "level": 2, "length": 5, "hint": "Pati pwenti nan yon plant." },
+        { "id": 4, "word": "bwa", "level": 2, "length": 3, "hint": "Materyo prensipal yon pyebwa." },
+        { "id": 5, "word": "flè", "level": 3, "length": 3, "hint": "Pati ki gen koulè nan yon plant." },
+        { "id": 16, "word": "rivyè", "level": 1, "length": 5, "hint": "Yon kouran dlo dous." },
+        { "id": 17, "word": "mòn", "level": 2, "length": 3, "hint": "Gwo elevasyon tè." },
+        { "id": 18, "word": "van", "level": 2, "length": 3, "hint": "Lè k ap soufle." },
+        { "id": 19, "word": "lapli", "level": 3, "length": 5, "hint": "Dlo k ap tonbe sot nan syèl la." },
+        { "id": 20, "word": "latè", "level": 3, "length": 4, "hint": "Planèt nou an." },
+        { "id": 76, "word": "zèb", "level": 1, "length": 3, "hint": "Plant vèt ki kouvri tè a." },
+        { "id": 77, "word": "wòch", "level": 2, "length": 5, "hint": "Gwo moso tè solid." },
+        { "id": 78, "word": "sab", "level": 1, "length": 3, "hint": "Ti grenn sou plaj la." }
+      ]
+    },
+    {
+      "name": "Espò",
+      "words": [
+        { "id": 6, "word": "foutbòl", "level": 1, "length": 7, "hint": "Jwe ak yon balon won." },
+        { "id": 7, "word": "baskèt", "level": 1, "length": 6, "hint": "Jwe ak yon panyen." },
+        { "id": 8, "word": "kous", "level": 2, "length": 4, "hint": "Konpetisyon pou wè kimoun ki pi rapid." },
+        { "id": 9, "word": "dans", "level": 2, "length": 4, "hint": "Balanse kòw sou mizik." },
+        { "id": 10, "word": "tenis", "level": 3, "length": 5, "hint": "Jwe ak yon rakèt ak yon ti boul jòn." },
+        { "id": 21, "word": "naje", "level": 1, "length": 4, "hint": "Deplase nan dlo." },
+        { "id": 22, "word": "volebòl", "level": 2, "length": 7, "hint": "Jwe ak yon filè." },
+        { "id": 23, "word": "boks", "level": 2, "length": 4, "hint": "Batay ak pwen." },
+        { "id": 24, "word": "judo", "level": 3, "length": 4, "hint": "Yon espò konba." },
+        { "id": 25, "word": "siklism", "level": 3, "length": 7, "hint": "Kous ak bisiklèt." },
+        { "id": 79, "word": "gòlf", "level": 2, "length": 4, "hint": "Jwe ak baton ak ti boul." },
+        { "id": 80, "word": "karate", "level": 3, "length": 6, "hint": "Art masyal Japonè." }
+      ]
+    },
+    {
+      "name": "Vil",
+      "words": [
+        { "id": 11, "word": "Pòtoprens", "level": 1, "length": 9, "hint": "Kapital peyi d'Ayiti." },
+        { "id": 12, "word": "Okay", "level": 1, "length": 4, "hint": "Yon vil nan sid peyi a." },
+        { "id": 13, "word": "Kapayisyen", "level": 2, "length": 9, "hint": "Yon vil nan nò peyi a." },
+        { "id": 14, "word": "Jakmèl", "level": 2, "length": 6, "hint": "Vil kanaval." },
+        { "id": 15, "word": "Gonayiv", "level": 3, "length": 7, "hint": "Vil endepandans." },
+        { "id": 26, "word": "Leyogàn", "level": 1, "length": 7, "hint": "Vil istorik." },
+        { "id": 27, "word": "Senmak", "level": 2, "length": 6, "hint": "Vil nan depatman Latibonit." },
+        { "id": 28, "word": "Tigwav", "level": 2, "length": 6, "hint": "Vil bò lanmè." },
+        { "id": 29, "word": "Jeremi", "level": 3, "length": 6, "hint": "Vil powèt yo." },
+        { "id": 30, "word": "Ansapit", "level": 3, "length": 7, "hint": "Vil fwontyè." },
+        { "id": 81, "word": "Mibalè", "level": 2, "length": 6, "hint": "Vil nan sant peyi a." },
+        { "id": 82, "word": "Lenbe", "level": 1, "length": 5, "hint": "Vil nan nò." }
+      ]
+    },
+    {
+      "name": "Manje",
+      "words": [
+        { "id": 31, "word": "diri", "level": 1, "length": 4, "hint": "Manje de baz." },
+        { "id": 32, "word": "pwa", "level": 1, "length": 3, "hint": "Legim ki gen anpil pwoteyin." },
+        { "id": 33, "word": "bannann", "level": 2, "length": 7, "hint": "Fwi jòn dous." },
+        { "id": 34, "word": "mango", "level": 2, "length": 5, "hint": "Fwi twopikal." },
+        { "id": 35, "word": "soup", "level": 3, "length": 4, "hint": "Likid cho ak legim." },
+        { "id": 41, "word": "pen", "level": 1, "length": 3, "hint": "Manje ki fèt ak farin." },
+        { "id": 42, "word": "vyann", "level": 2, "length": 5, "hint": "Pati nan bèt nou manje." },
+        { "id": 43, "word": "ze", "level": 1, "length": 2, "hint": "Pwodwi poul." },
+        { "id": 44, "word": "lèt", "level": 1, "length": 3, "hint": "Bwason blan ki soti nan bèf." },
+        { "id": 45, "word": "sik", "level": 2, "length": 3, "hint": "Pou fè bagay dous." },
+        { "id": 83, "word": "kafe", "level": 1, "length": 4, "hint": "Bwason cho." },
+        { "id": 84, "word": "chokola", "level": 2, "length": 7, "hint": "Manje dous." }
+      ]
+    },
+    {
+      "name": "Zannimo",
+      "words": [
+        { "id": 36, "word": "chen", "level": 1, "length": 4, "hint": "Pi bon zanmi moun." },
+        { "id": 37, "word": "chat", "level": 1, "length": 4, "hint": "Bèt ki renmen dòmi." },
+        { "id": 38, "word": "kabrit", "level": 2, "length": 6, "hint": "Bèt ki bay lèt." },
+        { "id": 39, "word": "pwason", "level": 2, "length": 6, "hint": "Bèt ki viv nan dlo." },
+        { "id": 40, "word": "zwazo", "level": 3, "length": 5, "hint": "Bèt ki vole." },
+        { "id": 46, "word": "chwal", "level": 2, "length": 5, "hint": "Bèt ki kouri vit." },
+        { "id": 47, "word": "kochaj", "level": 1, "length": 6, "hint": "Bèt ki bay vyann kochon." },
+        { "id": 48, "word": "poul", "level": 1, "length": 4, "hint": "Bèt ki bay ze." },
+        { "id": 49, "word": "sourit", "level": 3, "length": 6, "hint": "Ti bèt ki renmen fwote." },
+        { "id": 50, "word": "serpan", "level": 3, "length": 6, "hint": "Bèt ki rale sou vant." },
+        { "id": 85, "word": "tig", "level": 3, "length": 3, "hint": "Gwo chat sovaj." },
+        { "id": 86, "word": "lyon", "level": 3, "length": 4, "hint": "Wa bèt yo." }
+      ]
+    },
+    {
+      "name": "Peyi",
+      "words": [
+        { "id": 51, "word": "Ayiti", "level": 1, "length": 5, "hint": "Premye repiblik nwa." },
+        { "id": 52, "word": "Etazini", "level": 2, "length": 7, "hint": "Peyi gwo pouvwa." },
+        { "id": 53, "word": "Kanada", "level": 2, "length": 6, "hint": "Peyi frèt nan nò." },
+        { "id": 54, "word": "Frans", "level": 1, "length": 5, "hint": "Peyi ki pale franse." },
+        { "id": 55, "word": "Brezil", "level": 3, "length": 6, "hint": "Peyi foutbòl ak samba." },
+        { "id": 87, "word": "Lachin", "level": 2, "length": 6, "hint": "Peyi ki gen anpil moun." },
+        { "id": 88, "word": "End", "level": 1, "length": 3, "hint": "Peyi nan Azi." }
+      ]
+    },
+    {
+      "name": "Pati nan ko",
+      "words": [
+        { "id": 56, "word": "tèt", "level": 1, "length": 3, "hint": "Pati ki pi wo nan kò a." },
+        { "id": 57, "word": "men", "level": 1, "length": 3, "hint": "Pou kenbe bagay." },
+        { "id": 58, "word": "pye", "level": 1, "length": 3, "hint": "Pou mache." },
+        { "id": 59, "word": "je", "level": 2, "length": 2, "hint": "Pou wè." },
+        { "id": 60, "word": "bouch", "level": 2, "length": 5, "hint": "Pou pale ak manje." },
+        { "id": 89, "word": "nen", "level": 1, "length": 3, "hint": "Pou pran sant." },
+        { "id": 90, "word": "zòrèy", "level": 2, "length": 5, "hint": "Pou tande." }
+      ]
+    },
+    {
+      "name": "Mak Machinn",
+      "words": [
+        { "id": 61, "word": "Toyota", "level": 1, "length": 6, "hint": "Mak machin Japonè." },
+        { "id": 62, "word": "Honda", "level": 1, "length": 5, "hint": "Yon lòt mak Japonè." },
+        { "id": 63, "word": "Ford", "level": 2, "length": 4, "hint": "Mak machin Ameriken." },
+        { "id": 64, "word": "BMW", "level": 2, "length": 3, "hint": "Mak machin Alman liks." },
+        { "id": 65, "word": "Mercedes", "level": 3, "length": 8, "hint": "Yon lòt mak Alman liks." },
+        { "id": 91, "word": "Nissan", "level": 1, "length": 6, "hint": "Mak machin Japonè." },
+        { "id": 92, "word": "Hyundai", "level": 2, "length": 7, "hint": "Mak machin Koreyen." }
+      ]
+    },
+    {
+      "name": "Jwe Foutbol",
+      "words": [
+        { "id": 66, "word": "gòl", "level": 1, "length": 3, "hint": "Objektif jwèt la." },
+        { "id": 67, "word": "balon", "level": 1, "length": 5, "hint": "Sa yo choute." },
+        { "id": 68, "word": "atakè", "level": 2, "length": 6, "hint": "Jwè ki make gòl." },
+        { "id": 69, "word": "defansè", "level": 2, "length": 7, "hint": "Jwè ki pwoteje gòl la." },
+        { "id": 70, "word": "abit", "level": 3, "length": 4, "hint": "Moun ki dirije match la." },
+        { "id": 93, "word": "teren", "level": 1, "length": 5, "hint": "Kote yo jwe foutbòl." },
+        { "id": 94, "word": "ekip", "level": 2, "length": 4, "hint": "Gwoup jwè." }
+      ]
+    },
+    {
+      "name": "Aparey",
+      "words": [
+        { "id": 71, "word": "telefòn", "level": 1, "length": 7, "hint": "Pou pale ak moun ki lwen." },
+        { "id": 72, "word": "òdinatè", "level": 2, "length": 8, "hint": "Pou travay ak jwe." },
+        { "id": 73, "word": "televizyon", "level": 3, "length": 10, "hint": "Pou gade fim ak emisyon." },
+        { "id": 74, "word": "radyo", "level": 1, "length": 5, "hint": "Pou koute mizik ak nouvèl." },
+        { "id": 75, "word": "frize", "level": 2, "length": 5, "hint": "Pou kenbe manje frèt." },
+        { "id": 95, "word": "machin", "level": 1, "length": 6, "hint": "Pou kondwi." },
+        { "id": 96, "word": "revèy", "level": 2, "length": 5, "hint": "Pou gade lè." }
+      ]
+    },
+    {
+      "name": "Pwofesyon",
+      "words": [
+        { "id": 97, "word": "doktè", "level": 1, "length": 5, "hint": "Moun ki trete malad." },
+        { "id": 98, "word": "enjenyè", "level": 2, "length": 7, "hint": "Moun ki konsepsyon bagay." },
+        { "id": 99, "word": "pwofesè", "level": 1, "length": 7, "hint": "Moun ki anseye." },
+        { "id": 100, "word": "kiltivatè", "level": 2, "length": 9, "hint": "Moun ki travay tè." },
+        { "id": 101, "word": "atis", "level": 3, "length": 4, "hint": "Moun ki kreye atizay." }
+      ]
+    },
+    {
+      "name": "Fwi",
+      "words": [
+        { "id": 102, "word": "zoranj", "level": 1, "length": 6, "hint": "Fwi won, jòn oswa oranj." },
+        { "id": 103, "word": "papay", "level": 2, "length": 5, "hint": "Gwo fwi dous." },
+        { "id": 104, "word": "sitwon", "level": 1, "length": 6, "hint": "Fwi asid, jòn." },
+        { "id": 105, "word": "rezen", "level": 2, "length": 5, "hint": "Ti fwi ki grandi an grap." },
+        { "id": 106, "word": "anana", "level": 3, "length": 5, "hint": "Gwo fwi twopikal ak yon kouwòn." }
+      ]
+    },
+    {
+      "name": "Legim",
+      "words": [
+        { "id": 107, "word": "tomat", "level": 1, "length": 5, "hint": "Fwi wouj yo itilize kòm legim." },
+        { "id": 108, "word": "kawòt", "level": 1, "length": 5, "hint": "Legim oranj, bon pou je." },
+        { "id": 109, "word": "letu", "level": 2, "length": 4, "hint": "Legim fèy vèt." },
+        { "id": 110, "word": "piman", "level": 2, "length": 5, "hint": "Legim ki ka pikant." },
+        { "id": 111, "word": "berejèn", "level": 3, "length": 7, "hint": "Legim koulè wouj violèt." }
+      ]
+    },
+    {
+      "name": "Bèt Lanmè",
+      "words": [
+        { "id": 112, "word": "pwason", "level": 1, "length": 6, "hint": "Bèt ki naje nan dlo." },
+        { "id": 113, "word": "krab", "level": 2, "length": 4, "hint": "Bèt lanmè ki gen koki." },
+        { "id": 114, "word": "kribich", "level": 2, "length": 7, "hint": "Ti bèt lanmè ki sanble ak kribich." },
+        { "id": 115, "word": "tòti", "level": 3, "length": 4, "hint": "Bèt lanmè ki gen yon gwo koki." },
+        { "id": 116, "word": "dofen", "level": 3, "length": 5, "hint": "Mamifè lanmè entèlijan." }
+      ]
+    },
+    {
+      "name": "Lekòl",
+      "words": [
+        { "id": 117, "word": "liv", "level": 1, "length": 3, "hint": "Pou li ak aprann." },
+        { "id": 118, "word": "kreyon", "level": 1, "length": 6, "hint": "Pou ekri ak desine." },
+        { "id": 119, "word": "tablo", "level": 2, "length": 5, "hint": "Kote pwofesè ekri." },
+        { "id": 120, "word": "elèv", "level": 2, "length": 4, "hint": "Moun ki aprann nan lekòl." },
+        { "id": 121, "word": "pwofesè", "level": 3, "length": 7, "hint": "Moun ki anseye nan lekòl." }
+      ]
+    },
+    {
+      "name": "Meteyo",
+      "words": [
+        { "id": 122, "word": "solèy", "level": 1, "length": 5, "hint": "Li klere syèl la lajounen." },
+        { "id": 123, "word": "lapli", "level": 1, "length": 5, "hint": "Dlo k ap tonbe sot nan syèl la." },
+        { "id": 124, "word": "nyaj", "level": 2, "length": 4, "hint": "Moso dlo nan syèl la." },
+        { "id": 125, "word": "loraj", "level": 2, "length": 5, "hint": "Bri fò nan syèl la." },
+        { "id": 126, "word": "siklon", "level": 3, "length": 6, "hint": "Gwo tanpèt ak van fò." }
+      ]
+    },
+    {
+      "name": "Labib",
+      "words": [
+        { "id": 127, "word": "Jezi", "level": 1, "length": 4, "hint": "Figi prensipal nan Krisyanis." },
+        { "id": 128, "word": "Bondye", "level": 1, "length": 6, "hint": "Kreyatè linivè." },
+        { "id": 129, "word": "lapriyè", "level": 2, "length": 7, "hint": "Pale ak Bondye." },
+        { "id": 130, "word": "legliz", "level": 2, "length": 6, "hint": "Kote moun adore Bondye." },
+        { "id": 131, "word": "bib", "level": 3, "length": 3, "hint": "Liv sakre Krisyanis." }
+      ]
+    },
+    {
+      "name": "Teknoloji",
+      "words": [
+        { "id": 132, "word": "telefòn", "level": 1, "length": 7, "hint": "Aparèy pou kominike." },
+        { "id": 133, "word": "òdinatè", "level": 2, "length": 8, "hint": "Machin pou trete enfòmasyon." },
+        { "id": 134, "word": "entènèt", "level": 3, "length": 7, "hint": "Rezo mondyal enfòmasyon." },
+        { "id": 135, "word": "aplikasyon", "level": 2, "length": 10, "hint": "Lojisyèl pou telefòn oswa òdinatè." },
+        { "id": 136, "word": "robot", "level": 3, "length": 5, "hint": "Machin ki ka fè travay moun." }
+      ]
+    },
+    {
+      "name": "Sèks",
+      "words": [
+        { "id": 137, "word": "kapòt", "level": 1, "length": 5, "hint": "mwayen pwoteksyon pou lè wap koke." },
+        { "id": 138, "word": "sòspwa", "level": 2, "length": 6, "hint": "remèd pou bann." },
+        { "id": 139, "word": "bakchat", "level": 3, "length": 7, "hint": "pozisyon lè w pran fi a pa dèyè." },
+        { "id": 140, "word": "tibèf", "level": 2, "length": 5, "hint": "sousad pati entim patenè a." },
+        { "id": 141, "word": "zonyon", "level": 3, "length": 6, "hint": "souse tou dèyè." }
+      ]
+    }
+  ]
+}
