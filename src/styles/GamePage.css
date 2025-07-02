@@ -4,7 +4,7 @@
   align-items: center;
   padding: 1rem;
   background-color: #FFF8E1; /* Light cream background */
-  height: 100%;
+  height: 100vh;
   border: solid 2px red;
   /* height: 100vh; /* Take full viewport height */
   overflow: hidden; /* Prevent scrolling within the container */
