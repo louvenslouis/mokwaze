@@ -15,7 +15,7 @@ const HomePage = () => {
       <Link to="/category" className="button">Jwe</Link>
       <Link to="/" className="button">Koleksyon</Link>
       <Link to="/" className="button">Paramèt</Link>
-      <Link to="/" className="button">Apropo</Link>
+      <Link to="/" className="button">A pwopo</Link>
     </div>
   );
 };
