@@ -1,9 +1,14 @@
-
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/HomePage.css';
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate('/category');
+  }, [navigate]);
+
   return (
     <div className="home-container">
       <h1 className="logo">MO KWAZE</h1>

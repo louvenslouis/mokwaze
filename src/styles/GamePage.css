@@ -4,7 +4,8 @@
   align-items: center;
   padding: 1rem;
   background-color: #FFF8E1; /* Light cream background */
-  height: 100vh; /* Take full viewport height */
+  height: 98%;
+  /* height: 100vh; /* Take full viewport height */
   overflow: hidden; /* Prevent scrolling within the container */
   justify-content: space-between; /* Distribute space between elements */
 }
@@ -31,7 +32,7 @@
 }
 
 .category-title {
-  font-size: 1.8rem; /* Smaller font for header */
+  font-size: 1.5rem; /* Smaller font for header */
   font-weight: bold;
   color: #FFC107; /* Amber */
   margin: 0;
