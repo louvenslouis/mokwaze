@@ -4,13 +4,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #FFF8E1; /* Light cream background */
-  height: 100vh; /* Set body height to 100% of viewport height */
-  overflow: hidden; /* Prevent scrolling on the body */
 }
 
 html {
-  height: 100%; /* Set html height to 100% */
-  overflow: hidden; /* Prevent scrolling on the html element */
+  /* No specific height or overflow for html to allow scrolling */
 }
 
 code {

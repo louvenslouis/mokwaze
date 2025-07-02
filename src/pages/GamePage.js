@@ -225,6 +225,7 @@ const GamePage = () => {
   return (
     <div className="game-container" onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp} onTouchEnd={handleTouchEnd}>
       <div className="game-header">
+        <button onClick={() => navigate('/category')} className="back-button">← Retounen</button>
         <h1 className="category-title">{categoryName}</h1>
         <div className="hints-display">
           Hints: {hintsRemaining}

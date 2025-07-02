@@ -19,6 +19,17 @@
   box-sizing: border-box; /* Include padding in width */
 }
 
+.back-button {
+  background-color: #FFC107;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
 .category-title {
   font-size: 1.8rem; /* Smaller font for header */
   font-weight: bold;

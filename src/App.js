@@ -10,14 +10,21 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/category" element={<CategoryPage />} />
-          <Route path="/game/:categoryName" element={<GamePage />} />
-          <Route path="/victory" element={<VictoryPage />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/game/:categoryName" element={<GamePage />} />
+        <Route
+          path="*"
+          element={
+            <Layout>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/category" element={<CategoryPage />} />
+                <Route path="/victory" element={<VictoryPage />} />
+              </Routes>
+            </Layout>
+          }
+        />
+      </Routes>
     </Router>
   );
 }
