@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import wordsData from '../data/words.json';
 import { generateGrid } from '../utils/gameUtils';
@@ -108,8 +108,80 @@ const GamePage = () => {
     return foundWords.includes(word.toUpperCase());
   }, [foundWords]);
 
+  const gridRef = useRef(null);
+
+  const getCellCoordinatesFromEvent = useCallback((event) => {
+    if (!gridRef.current) return null;
+
+    const gridRect = gridRef.current.getBoundingClientRect();
+    const cellSize = gridRect.width / grid[0].length; // Assuming square cells
+
+    const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+    const clientY = event.touches ? event.touches[0].clientY : event.clientY;
+
+    const colIndex = Math.floor((clientX - gridRect.left) / cellSize);
+    const rowIndex = Math.floor((clientY - gridRect.top) / cellSize);
+
+    // Ensure coordinates are within grid bounds
+    if (rowIndex >= 0 && rowIndex < grid.length && colIndex >= 0 && colIndex < grid[0].length) {
+      return { row: rowIndex, col: colIndex };
+    }
+    return null;
+  }, [grid]);
+
+  const handleTouchStart = useCallback((event) => {
+    event.preventDefault(); // Prevent scrolling
+    const coords = getCellCoordinatesFromEvent(event);
+    if (coords) {
+      setIsSelecting(true);
+      setSelectedCells([coords]);
+    }
+  }, [getCellCoordinatesFromEvent]);
+
+  const handleTouchMove = useCallback((event) => {
+    if (!isSelecting) return;
+    event.preventDefault(); // Prevent scrolling
+
+    const coords = getCellCoordinatesFromEvent(event);
+    if (coords) {
+      const newSelectedCells = [...selectedCells];
+      const lastCell = newSelectedCells[newSelectedCells.length - 1];
+
+      const isAdjacentToLast = (
+        (Math.abs(coords.row - lastCell.row) <= 1 && Math.abs(coords.col - lastCell.col) <= 1) &&
+        !(coords.row === lastCell.row && coords.col === lastCell.col)
+      );
+
+      if (isAdjacentToLast) {
+        const isAlreadySelected = newSelectedCells.some(cell => cell.row === coords.row && cell.col === coords.col);
+        if (!isAlreadySelected) {
+          newSelectedCells.push(coords);
+          setSelectedCells(newSelectedCells);
+        }
+      }
+    }
+  }, [isSelecting, selectedCells, getCellCoordinatesFromEvent]);
+
+  const handleTouchEnd = useCallback(() => {
+    setIsSelecting(false);
+    if (selectedCells.length > 1) {
+      const selectedWord = selectedCells.map(cell => grid[cell.row][cell.col]).join('');
+      const reversedSelectedWord = selectedCells.map(cell => grid[cell.row][cell.col]).reverse().join('');
+
+      const foundWordObj = wordsToFind.find(
+        wordObj => wordObj.wordData.word.toUpperCase() === selectedWord || wordObj.wordData.word.toUpperCase() === reversedSelectedWord
+      );
+
+      if (foundWordObj && !foundWords.includes(foundWordObj.wordData.word.toUpperCase())) {
+        setFoundWords(prevFoundWords => [...prevFoundWords, foundWordObj.wordData.word.toUpperCase()]);
+        setFoundWordCells(prevFoundWordCells => [...prevFoundWordCells, selectedCells]);
+      }
+    }
+    setSelectedCells([]);
+  }, [selectedCells, grid, wordsToFind, foundWords]);
+
   return (
-    <div className="game-container" onMouseLeave={handleMouseUp}> {/* Clear selection if mouse leaves grid */}
+    <div className="game-container" onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp} onTouchEnd={handleTouchEnd}>
       <h1 className="category-title">{categoryName}</h1>
       <div className="hints-display">
         Hints Remaining: {hintsRemaining}
@@ -117,7 +189,7 @@ const GamePage = () => {
 
       <div className="word-list-toggle">
         <button onClick={() => setShowWordList(!showWordList)} className="toggle-button">
-          {showWordList ? '👁️' : '🙈'} {/* Eye icon for show/hide */}
+          {showWordList ? '👁️' : '🙈'}
         </button>
       </div>
 
@@ -136,16 +208,20 @@ const GamePage = () => {
         </ul>
       </div>
 
-      <div className="word-search-grid">
+      <div 
+        className="word-search-grid"
+        ref={gridRef}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseEnter}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+      >
         {grid.map((row, rowIndex) => (
           <div key={rowIndex} className="grid-row">
             {row.map((cell, colIndex) => (
               <span
                 key={`${rowIndex}-${colIndex}`}
                 className={`grid-cell ${isCellSelected(rowIndex, colIndex) ? 'selected' : ''} ${isGridCellFound(rowIndex, colIndex) ? 'found' : ''} ${hintedCell && hintedCell.row === rowIndex && hintedCell.col === colIndex ? 'hinted' : ''}`}
-                onMouseDown={() => handleMouseDown(rowIndex, colIndex)}
-                onMouseEnter={() => handleMouseEnter(rowIndex, colIndex)}
-                onMouseUp={handleMouseUp}
               >
                 {cell}
               </span>
