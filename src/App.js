@@ -11,19 +11,10 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/category" element={<CategoryPage />} />
         <Route path="/game/:categoryName" element={<GamePage />} />
-        <Route
-          path="*"
-          element={
-            <Layout>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/category" element={<CategoryPage />} />
-                <Route path="/victory" element={<VictoryPage />} />
-              </Routes>
-            </Layout>
-          }
-        />
+        <Route path="/victory" element={<VictoryPage />} />
       </Routes>
     </Router>
   );

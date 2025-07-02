@@ -16,15 +16,15 @@
 }
 
 .button {
-  background-color: #FFC107; /* Amber */
+  background-color: red; /* Red */
   color: white;
-  padding: 1rem 2rem;
+  padding: 2rem 4rem;
   border: none;
   border-radius: 8px;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   text-decoration: none;
   text-align: center;
   width: 80%;
-  max-width: 400px;
+  max-width: 600px;
 }
