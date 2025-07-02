@@ -224,15 +224,16 @@ const GamePage = () => {
 
   return (
     <div className="game-container" onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp} onTouchEnd={handleTouchEnd}>
-      <h1 className="category-title">{categoryName}</h1>
-      <div className="hints-display">
-        Hints Remaining: {hintsRemaining}
-      </div>
-
-      <div className="word-list-toggle">
-        <button onClick={() => setShowWordList(!showWordList)} className="toggle-button">
-          {showWordList ? '👁️' : '🙈'}
-        </button>
+      <div className="game-header">
+        <h1 className="category-title">{categoryName}</h1>
+        <div className="hints-display">
+          Hints: {hintsRemaining}
+        </div>
+        <div className="word-list-toggle">
+          <button onClick={() => setShowWordList(!showWordList)} className="toggle-button">
+            {showWordList ? '👁️' : '🙈'}
+          </button>
+        </div>
       </div>
 
       <div className={`words-to-find ${showWordList ? '' : 'hidden'}`}>
