@@ -3,7 +3,7 @@ body {
   font-family: 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FFF8E1; /* Light cream background */
+  background-color: white; /* White background */
 }
 
 html {

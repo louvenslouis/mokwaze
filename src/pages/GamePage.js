@@ -25,6 +25,8 @@ const GamePage = () => {
       const { grid: generatedGrid, placedWords } = generateGrid(category.words, 10);
       setGrid(generatedGrid);
       setWordsToFind(placedWords);
+      console.log('Generated Grid:', generatedGrid);
+      console.log('Placed Words:', placedWords);
       setFoundWords([]);
       setSelectedCells([]);
       setFoundWordCells([]);

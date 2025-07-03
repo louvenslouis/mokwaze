@@ -50,7 +50,7 @@ export function generateGrid(wordsToPlace, gridSize = 10) {
     const word = wordObj.word.toUpperCase();
     let placed = false;
     let attempts = 0;
-    const maxAttempts = gridSize * gridSize * 4; // Prevent infinite loops
+    const maxAttempts = gridSize * gridSize * 10; // Increased attempts to prevent infinite loops
 
     while (!placed && attempts < maxAttempts) {
       const startX = Math.floor(Math.random() * gridSize);
