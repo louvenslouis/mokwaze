@@ -1,19 +1,22 @@
 
 .category-container {
   padding: 2rem;
-  background-color: #FFF8E1; /* Light cream background */
+  background-color: white; /* Light cream background */
   min-height: 100vh;
+  overflow:scroll;
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
+    overflow:scroll;
 }
 
 .card {
-  background-color: #FFC107; /* Amber */
-  color: white;
+  background-color: #f5edd8; /* Amber */
+  color: black;
+  box-shadow: #918f8c3d 3px 3px 5px;
   border-radius: 8px;
   padding: 2rem;
   text-align: center;
