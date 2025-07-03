@@ -8,6 +8,7 @@
   /* height: 100vh; /* Take full viewport height */
   overflow: hidden; /* Prevent scrolling within the container */
   justify-content: flex-star; /* Distribute space between elements */
+  overscroll-behavior-y: contain;
 }
 
 .game-header {
