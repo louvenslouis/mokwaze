@@ -114,12 +114,13 @@
 .word-search-grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  border: 2px solid #FFC107;
+  /* border: 2px solid #FFC107; */
   margin-bottom: 1rem; /* Reduced margin */
   flex-grow: 1; /* Allow grid to take available space */
-  width: 100%; /* Ensure grid takes full width */
   max-width: 400px; /* Max width for the grid */
   max-height: 400px; /* Max height for the grid */
+  width: 100%; /* Ensure grid takes full width */
+  aspect-ratio: 1 / 1;
 }
 
 .grid-row {
@@ -132,7 +133,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #FFECB3;
+  /*border: 1px solid #FFECB3; */
+  padding: 1px;
   font-size: 1rem;
   font-weight: bold;
   color: #333;
