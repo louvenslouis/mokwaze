@@ -18,6 +18,28 @@ const GamePage = () => {
   const [isSelecting, setIsSelecting] = useState(false); // For drag-and-drop
   const [showWordList, setShowWordList] = useState(true); // For word list visibility
   const [selectionDirection, setSelectionDirection] = useState(null); // New state for selection direction
+  const touchStartY = useRef(0);
+
+  useEffect(() => {
+    const preventPullToRefresh = (e) => {
+      // Only prevent if at the top of the scroll area and trying to scroll down
+      if (e.targetTouches[0].clientY > touchStartY.current && window.scrollY === 0) {
+        e.preventDefault();
+      }
+    };
+
+    const handleTouchStart = (e) => {
+      touchStartY.current = e.targetTouches[0].clientY;
+    };
+
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', preventPullToRefresh, { passive: false });
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', preventPullToRefresh);
+    };
+  }, []);
 
   useEffect(() => {
     const category = wordsData.categories.find(cat => cat.name === categoryName);
