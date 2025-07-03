@@ -6,9 +6,7 @@ body {
   background-color: white; /* White background */
 }
 
-html {
-  /* No specific height or overflow for html to allow scrolling */
-}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

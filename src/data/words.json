@@ -225,16 +225,6 @@
         { "id": 135, "word": "aplikasyon", "level": 2, "length": 10, "hint": "Lojisyèl pou telefòn oswa òdinatè." },
         { "id": 136, "word": "robot", "level": 3, "length": 5, "hint": "Machin ki ka fè travay moun." }
       ]
-    },
-    {
-      "name": "Sèks",
-      "words": [
-        { "id": 137, "word": "kapòt", "level": 1, "length": 5, "hint": "mwayen pwoteksyon pou lè wap koke." },
-        { "id": 138, "word": "sòspwa", "level": 2, "length": 6, "hint": "remèd pou bann." },
-        { "id": 139, "word": "bakchat", "level": 3, "length": 7, "hint": "pozisyon lè w pran fi a pa dèyè." },
-        { "id": 140, "word": "tibèf", "level": 2, "length": 5, "hint": "sousad pati entim patenè a." },
-        { "id": 141, "word": "zonyon", "level": 3, "length": 6, "hint": "souse tou dèyè." }
-      ]
     }
   ]
 }
