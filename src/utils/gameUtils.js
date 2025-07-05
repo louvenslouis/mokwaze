@@ -61,16 +61,17 @@ export function generateGrid(wordsToPlace, gridSize = 10) {
       const direction = DIRECTIONS[Math.floor(Math.random() * DIRECTIONS.length)];
 
       // Si la direction est inversée, inverser le mot pour le placer correctement
-      let wordToPlace = word;
-      if (
-        (direction.x === 0 && direction.y === -1) || // Horizontal droite -> gauche
-        (direction.x === -1 && direction.y === 0) || // Vertical bas -> haut
-        (direction.x === -1 && direction.y === -1) || // Diagonale haut gauche
-        (direction.x === -1 && direction.y === 1) || // Diagonale haut droite
-        (direction.x === 1 && direction.y === -1)    // Diagonale bas gauche
-      ) {
-        wordToPlace = word.split('').reverse().join('');
-      }
+      //let wordToPlace = word;
+      //if (
+        //(direction.x === 0 && direction.y === -1) || // Horizontal droite -> gauche
+        //(direction.x === -1 && direction.y === 0) || // Vertical bas -> haut
+        //(direction.x === -1 && direction.y === -1) || // Diagonale haut gauche
+        //(direction.x === -1 && direction.y === 1) || // Diagonale haut droite
+       // (direction.x === 1 && direction.y === -1)    // Diagonale bas gauche
+      //) {
+        //wordToPlace = word.split('').reverse().join('');
+      //}
+
 
       if (canPlaceWord(grid, wordToPlace, startX, startY, direction)) {
         placeWord(grid, wordToPlace, startX, startY, direction);
