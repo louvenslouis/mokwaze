@@ -2,10 +2,14 @@
 // mo-kwaze-web/src/utils/gameUtils.js
 
 const DIRECTIONS = [
-  { x: 0, y: 1 },   // Horizontal
-  { x: 1, y: 0 },   // Vertical
-  { x: 1, y: 1 },   // Diagonal (down-right)
-  { x: 1, y: -1 },  // Diagonal (up-right)
+  { x: 0, y: 1 },    // Horizontal: left to right
+  { x: 0, y: -1 },   // Horizontal: right to left
+  { x: 1, y: 0 },    // Vertical: top to bottom
+  { x: -1, y: 0 },   // Vertical: bottom to top
+  { x: 1, y: 1 },    // Diagonal: top-left to bottom-right
+  { x: -1, y: -1 },  // Diagonal: bottom-right to top-left
+  { x: 1, y: -1 },   // Diagonal: top-right to bottom-left
+  { x: -1, y: 1 }    // Diagonal: bottom-left to top-right
 ];
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
