@@ -1,11 +1,14 @@
-
 // mo-kwaze-web/src/utils/gameUtils.js
 
 const DIRECTIONS = [
-  { x: 0, y: 1 },   // Horizontal
-  { x: 1, y: 0 },   // Vertical
-  { x: 1, y: 1 },   // Diagonal (down-right)
-  { x: 1, y: -1 },  // Diagonal (up-right)
+  { x: 0, y: 1 },    // Horizontal gauche -> droite
+  { x: 0, y: -1 },   // Horizontal droite -> gauche
+  { x: 1, y: 0 },    // Vertical haut -> bas
+  { x: -1, y: 0 },   // Vertical bas -> haut
+  { x: 1, y: 1 },    // Diagonale bas droite
+  { x: -1, y: 1 },   // Diagonale haut droite
+  { x: 1, y: -1 },   // Diagonale bas gauche
+  { x: -1, y: -1 },  // Diagonale haut gauche
 ];
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -57,8 +60,20 @@ export function generateGrid(wordsToPlace, gridSize = 10) {
       const startY = Math.floor(Math.random() * gridSize);
       const direction = DIRECTIONS[Math.floor(Math.random() * DIRECTIONS.length)];
 
-      if (canPlaceWord(grid, word, startX, startY, direction)) {
-        placeWord(grid, word, startX, startY, direction);
+      // Si la direction est inversée, inverser le mot pour le placer correctement
+      let wordToPlace = word;
+      if (
+        (direction.x === 0 && direction.y === -1) || // Horizontal droite -> gauche
+        (direction.x === -1 && direction.y === 0) || // Vertical bas -> haut
+        (direction.x === -1 && direction.y === -1) || // Diagonale haut gauche
+        (direction.x === -1 && direction.y === 1) || // Diagonale haut droite
+        (direction.x === 1 && direction.y === -1)    // Diagonale bas gauche
+      ) {
+        wordToPlace = word.split('').reverse().join('');
+      }
+
+      if (canPlaceWord(grid, wordToPlace, startX, startY, direction)) {
+        placeWord(grid, wordToPlace, startX, startY, direction);
         placedWords.push({ wordData: wordObj, placement: { startX, startY, direction } });
         placed = true;
       }
