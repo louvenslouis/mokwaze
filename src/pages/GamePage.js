@@ -55,7 +55,6 @@ const GamePage = () => {
       setFoundWordCells([]);
       setHintsRemaining(30);  //unlimited hints; FIX IT AFTER
       setHintedCell(null);
-      setSelectionDirection(null); // Reset direction on category change
     }
   }, [categoryName]);
 
@@ -108,7 +107,6 @@ const GamePage = () => {
 
   const handleMouseUp = useCallback(() => {
     setIsSelecting(false);
-    setSelectionDirection(null); // Clear direction after selection ends
     if (selectedCells.length > 1 && grid.length > 0 && grid[0].length > 0) { // Add grid.length and grid[0].length check
       const selectedWord = selectedCells.map(cell => grid[cell.row][cell.col]).join('');
       const reversedSelectedWord = selectedCells.map(cell => grid[cell.row][cell.col]).reverse().join('');
@@ -171,13 +169,20 @@ const GamePage = () => {
     return null;
   }, [grid]);
 
+  const handleMouseDown = useCallback((event) => {
+    const coords = getCellCoordinatesFromEvent(event);
+    if (coords) {
+      setIsSelecting(true);
+      setSelectedCells([coords]);
+    }
+  }, [getCellCoordinatesFromEvent]);
+
   const handleTouchStart = useCallback((event) => {
     event.preventDefault(); // Prevent scrolling
     const coords = getCellCoordinatesFromEvent(event);
     if (coords) {
       setIsSelecting(true);
       setSelectedCells([coords]);
-      setSelectionDirection(null); // Reset direction on new selection
     }
   }, [getCellCoordinatesFromEvent]);
 
@@ -193,7 +198,6 @@ const GamePage = () => {
 
   const handleTouchEnd = useCallback(() => {
     setIsSelecting(false);
-    setSelectionDirection(null); // Clear direction after selection ends
     if (selectedCells.length > 1 && grid.length > 0 && grid[0].length > 0) { // Add grid.length and grid[0].length check
       const selectedWord = selectedCells.map(cell => grid[cell.row][cell.col]).join('');
       const reversedSelectedWord = selectedCells.map(cell => grid[cell.row][cell.col]).reverse().join('');
