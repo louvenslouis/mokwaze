@@ -5,6 +5,8 @@ import wordsData from '../data/words.json';
 import { generateGrid } from '../utils/gameUtils';
 import '../styles/GamePage.css';
 
+import FoundWordLine from '../components/FoundWordLine';
+
 const GamePage = () => {
   const { categoryName } = useParams();
   const navigate = useNavigate();
@@ -13,11 +15,10 @@ const GamePage = () => {
   const [foundWords, setFoundWords] = useState([]);
   const [selectedCells, setSelectedCells] = useState([]);
   const [foundWordCells, setFoundWordCells] = useState([]);
-  const [hintsRemaining, setHintsRemaining] = useState(3);
+  const [hintsRemaining, setHintsRemaining] = useState(30); //unlimited hints; FIX IT AFTER
   const [hintedCell, setHintedCell] = useState(null);
   const [isSelecting, setIsSelecting] = useState(false); // For drag-and-drop
   const [showWordList, setShowWordList] = useState(true); // For word list visibility
-  const [selectionDirection, setSelectionDirection] = useState(null); // New state for selection direction
   const touchStartY = useRef(0);
 
   useEffect(() => {
@@ -64,63 +65,46 @@ const GamePage = () => {
     }
   }, [foundWords, wordsToFind, navigate, categoryName]);
 
-  // Helper to check if a cell is a valid next step in a given direction
-  const isValidNextCell = useCallback((lastCell, nextCell, currentDirection) => {
-    const dx = nextCell.row - lastCell.row;
-    const dy = nextCell.col - lastCell.col;
+  const handleSelectionChange = useCallback((rowIndex, colIndex) => {
+    if (!isSelecting || !selectedCells.length) return;
 
-    // Must be a single step
-    if (Math.abs(dx) > 1 || Math.abs(dy) > 1) return false;
+    const startCell = selectedCells[0];
+    const endCell = { row: rowIndex, col: colIndex };
 
-    // Must be adjacent (not the same cell)
-    if (dx === 0 && dy === 0) return false;
+    const dx = endCell.col - startCell.col;
+    const dy = endCell.row - startCell.row;
 
-    if (currentDirection) {
-      // If a direction is established, ensure the new cell follows it
-      // Check if the new step maintains the same direction ratio
-      if (currentDirection.dx === 0 && dx !== 0) return false; // Was vertical, now horizontal
-      if (currentDirection.dy === 0 && dy !== 0) return false; // Was horizontal, now vertical
-      if (currentDirection.dx !== 0 && currentDirection.dy !== 0) { // Was diagonal
-        if (Math.abs(dx) !== Math.abs(dy)) return false; // Not diagonal anymore
-        if (dx / currentDirection.dx !== dy / currentDirection.dy) return false; // Changed diagonal direction
+    let newSelectedCells = [startCell];
+
+    if (dx === 0 && dy === 0) {
+      // Same cell, do nothing more
+    } else if (dx === 0) {
+      // Vertical selection
+      const step = dy > 0 ? 1 : -1;
+      for (let i = step; Math.abs(i) <= Math.abs(dy); i += step) {
+        newSelectedCells.push({ row: startCell.row + i, col: startCell.col });
+      }
+    } else if (dy === 0) {
+      // Horizontal selection
+      const step = dx > 0 ? 1 : -1;
+      for (let i = step; Math.abs(i) <= Math.abs(dx); i += step) {
+        newSelectedCells.push({ row: startCell.row, col: startCell.col + i });
+      }
+    } else if (Math.abs(dx) === Math.abs(dy)) {
+      // Diagonal selection
+      const xStep = dx > 0 ? 1 : -1;
+      const yStep = dy > 0 ? 1 : -1;
+      for (let i = 1; i <= Math.abs(dx); i++) {
+        newSelectedCells.push({ row: startCell.row + i * yStep, col: startCell.col + i * xStep });
       }
     }
-    return true;
-  }, []);
 
-  // Drag-and-drop handlers
-  const handleMouseDown = useCallback((rowIndex, colIndex) => {
-    setIsSelecting(true);
-    setSelectedCells([{ row: rowIndex, col: colIndex }]);
-    setSelectionDirection(null); // Reset direction on new selection
-  }, []);
+    setSelectedCells(newSelectedCells);
+  }, [isSelecting, selectedCells]);
 
   const handleMouseEnter = useCallback((rowIndex, colIndex) => {
-    if (!isSelecting) return;
-
-    const newSelectedCells = [...selectedCells];
-    const lastCell = newSelectedCells[newSelectedCells.length - 1];
-    const currentCell = { row: rowIndex, col: colIndex };
-
-    if (selectedCells.length === 1) {
-      // If it's the second cell, establish direction
-      const dx = currentCell.row - lastCell.row;
-      const dy = currentCell.col - lastCell.col;
-      if (dx === 0 && dy === 0) return; // Same cell
-      setSelectionDirection({ dx, dy });
-      newSelectedCells.push(currentCell);
-      setSelectedCells(newSelectedCells);
-    } else if (selectedCells.length > 1) {
-      // For subsequent cells, check if it follows the established direction
-      if (isValidNextCell(lastCell, currentCell, selectionDirection)) {
-        const isAlreadySelected = newSelectedCells.some(cell => cell.row === currentCell.row && cell.col === currentCell.col);
-        if (!isAlreadySelected) {
-          newSelectedCells.push(currentCell);
-          setSelectedCells(newSelectedCells);
-        }
-      }
-    }
-  }, [isSelecting, selectedCells, selectionDirection, isValidNextCell]);
+    handleSelectionChange(rowIndex, colIndex);
+  }, [handleSelectionChange]);
 
   const handleMouseUp = useCallback(() => {
     setIsSelecting(false);
@@ -203,29 +187,9 @@ const GamePage = () => {
 
     const coords = getCellCoordinatesFromEvent(event);
     if (coords) {
-      const newSelectedCells = [...selectedCells];
-      const lastCell = newSelectedCells[newSelectedCells.length - 1];
-
-      if (selectedCells.length === 1) {
-        // If it's the second cell, establish direction
-        const dx = coords.row - lastCell.row;
-        const dy = coords.col - lastCell.col;
-        if (dx === 0 && dy === 0) return; // Same cell
-        setSelectionDirection({ dx, dy });
-        newSelectedCells.push(coords);
-        setSelectedCells(newSelectedCells);
-      } else if (selectedCells.length > 1) {
-        // For subsequent cells, check if it follows the established direction
-        if (isValidNextCell(lastCell, coords, selectionDirection)) {
-          const isAlreadySelected = newSelectedCells.some(cell => cell.row === coords.row && cell.col === coords.col);
-          if (!isAlreadySelected) {
-            newSelectedCells.push(coords);
-            setSelectedCells(newSelectedCells);
-          }
-        }
-      }
+      handleSelectionChange(coords.row, coords.col);
     }
-  }, [isSelecting, selectedCells, selectionDirection, isValidNextCell, getCellCoordinatesFromEvent]);
+  }, [isSelecting, getCellCoordinatesFromEvent, handleSelectionChange]);
 
   const handleTouchEnd = useCallback(() => {
     setIsSelecting(false);
@@ -284,12 +248,13 @@ const GamePage = () => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
       >
+        <FoundWordLine gridRef={gridRef} foundWordCells={foundWordCells} gridSize={grid.length} />
         {grid.map((row, rowIndex) => (
           <div key={rowIndex} className="grid-row">
             {row.map((cell, colIndex) => (
               <span
                 key={`${rowIndex}-${colIndex}`}
-                className={`grid-cell ${isCellSelected(rowIndex, colIndex) ? 'selected' : ''} ${isGridCellFound(rowIndex, colIndex) ? 'found' : ''} ${hintedCell && hintedCell.row === rowIndex && hintedCell.col === colIndex ? 'hinted' : ''}`}
+                className={`grid-cell ${isCellSelected(rowIndex, colIndex) ? 'selected' : ''} ${hintedCell && hintedCell.row === rowIndex && hintedCell.col === colIndex ? 'hinted' : ''}`}}
               >
                 {cell}
               </span>
