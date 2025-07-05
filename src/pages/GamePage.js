@@ -60,9 +60,9 @@ const GamePage = () => {
 
   useEffect(() => {
     if (wordsToFind.length > 0 && foundWords.length === wordsToFind.length) {
-      navigate('/victory');
+      navigate(`/victory/${categoryName}`);
     }
-  }, [foundWords, wordsToFind, navigate]);
+  }, [foundWords, wordsToFind, navigate, categoryName]);
 
   // Helper to check if a cell is a valid next step in a given direction
   const isValidNextCell = useCallback((lastCell, nextCell, currentDirection) => {

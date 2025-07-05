@@ -28,6 +28,16 @@
   transform: translateY(-5px);
 }
 
+.card.locked {
+  background-color: #e0e0e0; /* Grey background for locked cards */
+  cursor: not-allowed;
+  color: #9e9e9e;
+}
+
+.card.locked:hover {
+  transform: none; /* No hover effect for locked cards */
+}
+
 .card-title {
   font-size: 2rem;
   font-weight: bold;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CategoryPage from './pages/CategoryPage';
@@ -24,7 +24,7 @@ function App() {
         <Route path="/" element={<Layout><HomePage /></Layout>} />
         <Route path="/category" element={<CategoryPage />} />
         <Route path="/game/:categoryName" element={<GamePage />} />
-        <Route path="/victory" element={<VictoryPage />} />
+        <Route path="/victory/:categoryName" element={<VictoryPage />} />
       </Routes>
     </Router>
   );
