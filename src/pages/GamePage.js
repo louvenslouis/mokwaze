@@ -254,7 +254,7 @@ const GamePage = () => {
             {row.map((cell, colIndex) => (
               <span
                 key={`${rowIndex}-${colIndex}`}
-                className={`grid-cell ${isCellSelected(rowIndex, colIndex) ? 'selected' : ''} ${hintedCell && hintedCell.row === rowIndex && hintedCell.col === colIndex ? 'hinted' : ''}`}}
+                className={`grid-cell ${isCellSelected(rowIndex, colIndex) ? 'selected' : ''} ${hintedCell && hintedCell.row === rowIndex && hintedCell.col === colIndex ? 'hinted' : ''}`}
               >
                 {cell}
               </span>
