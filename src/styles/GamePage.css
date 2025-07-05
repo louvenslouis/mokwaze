@@ -122,6 +122,7 @@
   max-height: 400px; /* Max height for the grid */
   width: 100%; /* Ensure grid takes full width */
   aspect-ratio: 1 / 1;
+  position: relative; /* This is crucial for the line container positioning */
 }
 
 .grid-row {
@@ -141,6 +142,8 @@
   color: #333;
   cursor: pointer;
   user-select: none;
+  position: relative; /* Needed for z-index to work */
+  z-index: 2; /* Ensure letters are above the line */
 }
 
 .grid-cell.selected {
