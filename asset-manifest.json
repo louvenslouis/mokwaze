@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/mokwaze/static/css/main.2f45d00a.css",
-    "main.js": "/mokwaze/static/js/main.8e6b4974.js",
+    "main.js": "/mokwaze/static/js/main.8c2acacd.js",
     "static/js/453.22036f57.chunk.js": "/mokwaze/static/js/453.22036f57.chunk.js",
     "static/media/marel.png": "/mokwaze/static/media/marel.83261a0fd586ce1da90a.png",
     "index.html": "/mokwaze/index.html",
     "main.2f45d00a.css.map": "/mokwaze/static/css/main.2f45d00a.css.map",
-    "main.8e6b4974.js.map": "/mokwaze/static/js/main.8e6b4974.js.map",
+    "main.8c2acacd.js.map": "/mokwaze/static/js/main.8c2acacd.js.map",
     "453.22036f57.chunk.js.map": "/mokwaze/static/js/453.22036f57.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2f45d00a.css",
-    "static/js/main.8e6b4974.js"
+    "static/js/main.8c2acacd.js"
   ]
 }
