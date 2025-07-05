@@ -52,7 +52,7 @@ const GamePage = () => {
       setFoundWords([]);
       setSelectedCells([]);
       setFoundWordCells([]);
-      setHintsRemaining(3);
+      setHintsRemaining(30);  //unlimited hints; FIX IT AFTER
       setHintedCell(null);
       setSelectionDirection(null); // Reset direction on category change
     }
